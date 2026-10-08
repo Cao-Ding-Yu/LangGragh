@@ -7,8 +7,8 @@ from langgraph.graph import StateGraph,START,END
 # 1. 定义状态
 @dataclass
 class OverAllState:
-    message: str    # 状态数据信息
-    logs: Annotated[list[str],add]  # 定义日志新增方式为追加
+    message : str    # 状态数据信息
+    logs : Annotated[list[str],add]  # 定义日志新增方式为追加
 
 # 2. 定义节点
 def node_1(state:OverAllState) -> OverAllState:
