@@ -40,7 +40,7 @@ def node_4(state:OverAllState) -> OverAllState:
         "logs":["node_4 运行完毕"]
     }
 
-# node节点的添加顺序会决定node4中谁的补充先被添加
+# node节点的添加顺序会决定下层node中谁的补充先被添加
 builder = StateGraph(OverAllState)
 builder.add_node("node_1", node_1)
 builder.add_node("node_2", node_2)
