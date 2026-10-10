@@ -14,22 +14,13 @@ class OverAllState(TypedDict):
     music : str
 
 def node_poem(state: OverAllState) -> OverAllState:
-    poem = model.invoke([f"写一首关于{state['topic']}主题的诗词"]).content
-    return {
-        "poem": poem
-    }
+    return {"poem": model.invoke([f"写一首关于{state['topic']}主题的诗词"]).content}
 
 def node_joke(state: OverAllState) -> OverAllState:
-    joke = model.invoke([f"写一个关于{state['topic']}主题的笑话"]).content
-    return {
-        "joke": joke
-    }
+    return {"joke": model.invoke([f"写一个关于{state['topic']}主题的笑话"]).content}
 
 def node_music(state: OverAllState) -> OverAllState:
-    music = model.invoke([f"写一个关于{state['topic']}主题的歌曲"]).content
-    return {
-        "music": music
-    }
+    return {"music": model.invoke([f"写一个关于{state['topic']}主题的歌曲"]).content}
 
 # 路由选择函数
 def route(state: OverAllState) -> Sequence[Literal["poem","joke", "music"]]:
